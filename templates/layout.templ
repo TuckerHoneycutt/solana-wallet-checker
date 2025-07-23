@@ -1,0 +1,30 @@
+package templates
+
+templ Layout(title string) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+		</head>
+		<body class="bg-gray-100 min-h-screen">
+			<nav class="bg-purple-600 text-white p-4">
+				<div class="container mx-auto flex justify-between items-center">
+					<a href="/" class="text-xl font-bold">
+						<i class="fas fa-wallet mr-2"></i>
+						Solana Wallet Checker
+					</a>
+					<div class="space-x-4">
+						<a href="/" class="hover:text-purple-200">Home</a>
+					</div>
+				</div>
+			</nav>
+			<main class="container mx-auto px-4 py-8">
+				{ children... }
+			</main>
+		</body>
+	</html>
+}

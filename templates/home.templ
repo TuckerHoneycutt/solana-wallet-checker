@@ -1,0 +1,52 @@
+package templates
+
+templ Home() {
+	@Layout("Solana Wallet Checker") {
+		<div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+			<div class="text-center mb-6">
+				<i class="fas fa-search text-purple-600 text-4xl mb-4"></i>
+				<h1 class="text-2xl font-bold text-gray-800">Check Wallet Balance</h1>
+				<p class="text-gray-600 mt-2">Enter a Solana wallet address to view its token balances</p>
+			</div>
+			<form action="/balance" method="GET" class="space-y-4">
+				<div>
+					<label for="wallet" class="block text-sm font-medium text-gray-700 mb-2">
+						Wallet Address
+					</label>
+					<input
+						type="text"
+						id="wallet"
+						name="wallet"
+						required
+						placeholder="Enter Solana wallet address..."
+						class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+					/>
+				</div>
+				<button
+					type="submit"
+					class="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition duration-200 flex items-center justify-center"
+				>
+					<i class="fas fa-search mr-2"></i>
+					Check Balance
+				</button>
+			</form>
+			<div class="mt-6 p-4 bg-blue-50 rounded-md">
+				<h3 class="text-sm font-medium text-blue-800 mb-2">
+					<i class="fas fa-info-circle mr-1"></i>
+					Supported Bluechip Assets
+				</h3>
+				<div class="flex flex-wrap gap-2 mb-2">
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">SOL</span>
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">ETH</span>
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">USDC</span>
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">USDT</span>
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">WBTC</span>
+					<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">cbBTC</span>
+				</div>
+				<p class="text-xs text-blue-600 font-mono break-all">
+					Example: 9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM
+				</p>
+			</div>
+		</div>
+	}
+}
